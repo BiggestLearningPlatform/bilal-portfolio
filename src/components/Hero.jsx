@@ -1,11 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="py-5 bg-light">
       <div className="container">
         <div className="row align-items-center text-center text-md-start">
-          
+
           {/* Profile Image */}
           <div className="col-12 col-md-4 mb-4 mb-md-0 d-flex justify-content-center">
             <img
@@ -29,13 +32,22 @@ function Hero() {
             </p>
 
             {/* Call to Action */}
-            <div className="mt-4">
-              <a href="/skills" className="btn btn-primary btn-lg me-2">
+            <div className="mt-4 d-flex justify-content-center justify-content-md-start gap-3">
+              <button
+                onClick={() => navigate('/skills')}
+                className="btn btn-primary btn-lg"
+                aria-label="View My Skills"
+              >
                 View My Skills
-              </a>
-              <a href="/projects" className="btn btn-outline-secondary btn-lg">
+              </button>
+
+              <button
+                onClick={() => navigate('/projects')}
+                className="btn btn-outline-secondary btn-lg"
+                aria-label="See My Projects"
+              >
                 See My Projects
-              </a>
+              </button>
             </div>
           </div>
         </div>
